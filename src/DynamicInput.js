@@ -1,6 +1,6 @@
 import React from 'react'
 import "./addremove-input-fields-dynamically.css"
-const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes, inputOptions, setInputOptions, containerClassName, itemClassName, buttonAttributes, buttonText = "add", buttonError }) => {
+const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = null, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = null, buttonText = "add", buttonError = null }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -25,7 +25,7 @@ const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName
   };
   return (
     <div className={`container ${containerClassName}`}>
-      {inputOptions.map((inputValue, index) => (
+      {inputOptions.length && inputOptions.map((inputValue, index) => (
         <div key={index} className={`item ${itemClassName}`}>
           <input
             type="text"
@@ -45,7 +45,8 @@ const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName
       <button
         onClick={handleClick}
         type="button"
-        className={`buttonCss ${buttonClassName} `}
+        className={`buttonCss ${buttonClassName} ${(length && (inputOptions.length === length)) && "error"} `}
+        disabled={(length && (inputOptions.length === length)) ? true : false}
         {...buttonAttributes}
       >
         {buttonText}
