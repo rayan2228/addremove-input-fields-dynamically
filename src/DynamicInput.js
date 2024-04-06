@@ -1,4 +1,6 @@
-const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes }) => {
+import { useState } from "react";
+import "./index.css"
+const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes, inputOptions, setInputOptions, containerClassName, itemClassName, buttonAttributes, buttonText = "add", buttonError = null }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -22,36 +24,33 @@ const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName
     }
   };
   return (
-    <>
+    <div className={`container ${containerClassName}`}>
       {inputOptions.map((inputValue, index) => (
-        <div key={index}>
-          <label
-            htmlFor="option"
+        <div key={index} className={`item ${itemClassName}`}>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => handleInputChange(index, e.target.value)}
+            className={`inputCss ${inputClassName}`}
+            {...inputAttributes}
+          />
+          <span
+            onClick={() => handleDeleteOption(index)}
+            className={`cross ${cancelClassName}`}
           >
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => handleInputChange(index, e.target.value)}
-              className={inputClassName}
-              {...inputAttributes}
-            />
-            <span
-              onClick={() => handleDeleteOption(index)}
-              className={cancelClassName}
-            >
-              X
-            </span>
-          </label>
+            X
+          </span>
         </div>
       ))}
       <button
         onClick={handleClick}
         type="button"
-        className={buttonClassName}
+        className={`buttonCss ${buttonClassName} ${(length && length > inputOptions.length) && ${buttonError ?? 'error'}}`}
+      {...buttonAttributes}
       >
-        add
-      </button>
-    </>
+      {buttonText}
+    </button>
+    </div >
   );
 };
 

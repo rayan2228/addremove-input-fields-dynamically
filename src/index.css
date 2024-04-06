@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.item {
+    width: 100%;
+    position: relative;
+}
+
+.cross {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.inputCss {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.buttonCss {
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid aquamarine;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    text-transform: capitalize;
+    background-color: azure;
+}
+
+.error {
+    background-color: rgb(248, 97, 97);
+    color: whitesmoke;
+}
