@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-const DynamicInput = () => {
-  const [inputOptions, setInputOptions] = useState(["", ""]);
+const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -9,7 +7,11 @@ const DynamicInput = () => {
     });
   };
   const handleClick = () => {
-    if (inputOptions.length < 4) {
+    if (length) {
+      if (inputOptions.length < length) {
+        setInputOptions((prevOptions) => [...prevOptions, ""]);
+      }
+    } else {
       setInputOptions((prevOptions) => [...prevOptions, ""]);
     }
   };
@@ -20,7 +22,7 @@ const DynamicInput = () => {
     }
   };
   return (
-    <div>
+    <>
       {inputOptions.map((inputValue, index) => (
         <div key={index}>
           <label
@@ -30,10 +32,12 @@ const DynamicInput = () => {
               type="text"
               value={inputValue}
               onChange={(e) => handleInputChange(index, e.target.value)}
-              required
+              className={inputClassName}
+              {...inputAttributes}
             />
             <span
               onClick={() => handleDeleteOption(index)}
+              className={cancelClassName}
             >
               X
             </span>
@@ -43,11 +47,11 @@ const DynamicInput = () => {
       <button
         onClick={handleClick}
         type="button"
+        className={buttonClassName}
       >
-        +
-        <p>Add</p>
+        add
       </button>
-    </div>
+    </>
   );
 };
 
