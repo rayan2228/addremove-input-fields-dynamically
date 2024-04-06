@@ -1,5 +1,5 @@
 import React from 'react'
-import "./index.css"
+import "./addremove-input-fields-dynamically.css"
 const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes, inputOptions, setInputOptions, containerClassName, itemClassName, buttonAttributes, buttonText = "add", buttonError }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {

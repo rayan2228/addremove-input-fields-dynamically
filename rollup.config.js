@@ -30,7 +30,6 @@ export default [
                 extract: true,
                 minimize: true,
                 sourceMap: true,
-                modules: true,
             }),
             terser({
                 ecma: 2020,
