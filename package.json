@@ -2,7 +2,7 @@
   "name": "addremove-input-fields-dynamically",
   "version": "1.0.0",
   "description": "The \"addremove-input-fields-dynamically\" npm package provides a simple and efficient solution for dynamically adding and removing input fields in web applications.Developers can integrate this package into their projects to enable users to add new input fields dynamically with a click of a button, as well as remove existing input fields as needed.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build:dev": "rollup -c --environment NODE_ENV:development",
@@ -24,12 +24,17 @@
   },
   "author": "Rayan Hossaian",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.14.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4"
+    "rollup": "^2.79.1"
   }
 }

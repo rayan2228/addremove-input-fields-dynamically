@@ -1,3 +1,1 @@
-import DynamicInput from "./DynamicInput";
-
-export { DynamicInput }
+export { default as DynamicInput } from './DynamicInput';
