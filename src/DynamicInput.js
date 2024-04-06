@@ -18,7 +18,7 @@ const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName
     }
   };
   const handleDeleteOption = (index) => {
-    if (index > 1) {
+    if (index) {
       inputOptions.splice(index, 1);
       setInputOptions((prev) => [...prev]);
     }
