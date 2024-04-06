@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React from 'react'
 import "./index.css"
-const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes, inputOptions, setInputOptions, containerClassName, itemClassName, buttonAttributes, buttonText = "add", buttonError = null }) => {
+const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName, inputAttributes, inputOptions, setInputOptions, containerClassName, itemClassName, buttonAttributes, buttonText = "add", buttonError }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -45,11 +45,11 @@ const DynamicInput = ({ length, cancelClassName, inputClassName, buttonClassName
       <button
         onClick={handleClick}
         type="button"
-        className={`buttonCss ${buttonClassName} ${(length && length > inputOptions.length) && ${buttonError ?? 'error'}}`}
-      {...buttonAttributes}
+        className={`buttonCss ${buttonClassName} `}
+        {...buttonAttributes}
       >
-      {buttonText}
-    </button>
+        {buttonText}
+      </button>
     </div >
   );
 };
