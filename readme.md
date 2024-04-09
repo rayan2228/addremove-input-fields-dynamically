@@ -71,4 +71,4 @@ Passionate MERN Stack Developer || Building Innovative Web Solutions with MongoD
 
 ## License
 
-This software is free to use under the MIT license. See the [LICENSE file](https://choosealicense.com/licenses/mit/) for license text and copyright information.
+This software is free to use under the MIT license. See the [LICENSE file](https://github.com/rayan2228/addremove-input-fields-dynamically/blob/main/LICENSE) for license text and copyright information.
