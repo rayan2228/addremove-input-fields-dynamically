@@ -1,6 +1,6 @@
 import React from 'react'
 import "./addremove-input-fields-dynamically.css"
-const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = null, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = null, buttonText = "add", buttonErrorCss = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null }) => {
+const DynamicInput = ({ length = 0, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = {}, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = {}, buttonText = "add", buttonErrorClassName = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -22,10 +22,10 @@ const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = 
     setInputOptions((prev) => [...prev]);
   };
   return (
-    <div className={`container ${containerClassName}`}>
+    <div className={`containerCss ${containerClassName}`}>
       {inputOptions.length > 0 &&
         inputOptions.map((inputValue, index) => (
-          <div key={index} className={`item ${itemClassName}`}>
+          <div key={index} className={`itemCss ${itemClassName}`}>
             <input
               type="text"
               value={inputValue}
@@ -35,7 +35,7 @@ const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = 
             />
             <span
               onClick={() => handleDeleteOption(index)}
-              className={`cross ${cancelClassName}`}
+              className={`crossCss ${cancelClassName}`}
             >
               {
                 cancelIcon !== null ?
@@ -49,7 +49,7 @@ const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = 
       <button
         onClick={handleClick}
         type="button"
-        className={`buttonCss  ${buttonClassName}  ${length && inputOptions.length === length && (buttonErrorCss || "error")
+        className={`buttonCss  ${buttonClassName}  ${length && inputOptions.length === length && (buttonErrorClassName || "errorCss")
           } `}
         disabled={length && inputOptions.length === length ? true : false}
         {...buttonAttributes}

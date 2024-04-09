@@ -1,16 +1,16 @@
-.container {
+.containerCss {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 10px 0px;
 }
 
-.item {
+.itemCss {
     width: 100%;
     position: relative;
 }
 
-.cross {
+.crossCss {
     position: absolute;
     top: 5px;
     right: 10px;
@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-.error {
+.errorCss {
     background-color: rgb(248, 97, 97);
     color: whitesmoke;
 }
