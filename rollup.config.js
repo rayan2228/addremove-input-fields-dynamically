@@ -4,6 +4,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
+import svg from 'rollup-plugin-svg';
+
 const devMode = (process.env.NODE_ENV === 'development');
 console.log(`${devMode ? 'development' : 'production'} mode bundle`);
 
@@ -16,6 +18,7 @@ export default [
             sourcemap: devMode ? 'inline' : false,
         },
         plugins: [
+            svg(),
             resolve(),
             commonjs({
                 exclude: 'src/**',

@@ -14,6 +14,7 @@
     position: absolute;
     top: 5px;
     right: 10px;
+    cursor: pointer;
 }
 
 .inputCss {
@@ -41,6 +42,9 @@
     -o-border-radius: 15px;
     text-transform: capitalize;
     background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .error {
