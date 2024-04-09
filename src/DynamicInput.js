@@ -1,8 +1,6 @@
 import React from 'react'
 import "./addremove-input-fields-dynamically.css"
-import cancelIconSvg from "./icons/cancel.svg"
-import addIconSvg from "./icons/add.svg"
-const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = null, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = null, buttonText = "add", buttonError = null, cancelIcon = cancelIconSvg, buttonIconBefore = addIconSvg, buttonIconAfter = null }) => {
+const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = null, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = null, buttonText = "add", buttonErrorCss = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null }) => {
   const handleInputChange = (index, value) => {
     setInputOptions((prevOptions) => {
       const newOptions = [...prevOptions];
@@ -39,24 +37,29 @@ const DynamicInput = ({ length = null, cancelClassName = null, inputClassName = 
               onClick={() => handleDeleteOption(index)}
               className={`cross ${cancelClassName}`}
             >
-              <img src={cancelIcon} alt={cancelIcon} loading="lazy" />
+              {
+                cancelIcon !== null ?
+                  <img src={cancelIcon} alt={cancelIcon} loading="lazy" />
+                  :
+                  "X"
+              }
             </span>
           </div>
         ))}
       <button
         onClick={handleClick}
         type="button"
-        className={`buttonCss ${buttonClassName}  ${length && inputOptions.length === length && (buttonError || "error")
+        className={`buttonCss  ${buttonClassName}  ${length && inputOptions.length === length && (buttonErrorCss || "error")
           } `}
         disabled={length && inputOptions.length === length ? true : false}
         {...buttonAttributes}
       >
-        {buttonIconBefore && (
-          <img src={buttonIconBefore} alt={cancelIcon} loading="lazy" />
+        {buttonIconBefore !== null && (
+          <img src={buttonIconBefore} alt={buttonIconBefore} loading="lazy" />
         )}
         {buttonText}
-        {buttonIconAfter && (
-          <img src={buttonIconAfter} alt={cancelIcon} loading="lazy" />
+        {buttonIconAfter !== null && (
+          <img src={buttonIconAfter} alt={buttonIconAfter} loading="lazy" />
         )}
       </button>
     </div>
