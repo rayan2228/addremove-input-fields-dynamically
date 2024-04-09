@@ -6,6 +6,13 @@ The \"addremove-input-fields-dynamically\" npm package provides a simple and eff
 
 Insert gif or link to demo
 
+<iframe src="https://codesandbox.io/p/devbox/addremove-input-fields-dynamically-jrnth5?embed=1&file=%2Fsrc%2FApp.tsx"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="addremove-input-fields-dynamically"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## Installation
 
 Install my-project with npm
