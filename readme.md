@@ -4,14 +4,7 @@ The \"addremove-input-fields-dynamically\" npm package provides a simple and eff
 
 ## Demo
 
-Insert gif or link to demo
-
-<iframe src="https://codesandbox.io/p/devbox/addremove-input-fields-dynamically-jrnth5?embed=1&file=%2Fsrc%2FApp.tsx"
-     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="addremove-input-fields-dynamically"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+[DEMO](https://stackblitz.com/edit/vitejs-vite-3kfukr?file=src%2FApp.tsx)
 
 ## Installation
 
@@ -78,4 +71,4 @@ Passionate MERN Stack Developer || Building Innovative Web Solutions with MongoD
 
 ## License
 
-This software is free to use under the MIT license. See the [LICENSE file](https://github.com/rayan2228/addremove-input-fields-dynamically/blob/main/LICENSE) for license text and copyright information.
+This software is free to use under the MIT license. See the [LICENSE file](https://choosealicense.com/licenses/mit/) for license text and copyright information.
