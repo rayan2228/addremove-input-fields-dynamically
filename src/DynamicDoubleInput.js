@@ -1,20 +1,6 @@
-const DynamicDoubleInput = ({
-  length = null,
-  cancelClassName = null,
-  inputClassName = null,
-  buttonClassName = null,
-  inputAttributes = null,
-  inputOptions,
-  setInputOptions,
-  containerClassName = null,
-  itemClassName = null,
-  buttonAttributes = null,
-  buttonText = "add",
-  buttonError = null,
-  cancelIcon = null,
-  buttonIconBefore = null,
-  buttonIconAfter = null,
-}) => {
+import React from 'react'
+import "./addremove-input-fields-dynamically.css"
+const DynamicDoubleInput = ({ length = 0, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = {}, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = {}, buttonText = "add", buttonErrorClassName = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null }) => {
   const handleInputChange = (index, field, event) => {
     const newInputs = [...inputOptions];
     newInputs[index][field] = event.target.value;
