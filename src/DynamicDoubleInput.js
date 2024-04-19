@@ -1,6 +1,6 @@
 import React from 'react'
 import "./addremove-input-fields-dynamically.css"
-const DynamicDoubleInput = ({ length = 0, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = {}, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = {}, buttonText = "add", buttonErrorClassName = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null }) => {
+const DynamicDoubleInput = ({ length = 0, cancelClassName = null, inputClassName = null, buttonClassName = null, inputAttributes = {}, inputOptions, setInputOptions, containerClassName = null, itemClassName = null, buttonAttributes = {}, buttonText = "add", buttonErrorClassName = null, cancelIcon = null, buttonIconBefore = null, buttonIconAfter = null, inputAttributesTwo = {} }) => {
   const handleInputChange = (index, field, event) => {
     const newInputs = [...inputOptions];
     newInputs[index][field] = event.target.value;
@@ -42,7 +42,7 @@ const DynamicDoubleInput = ({ length = 0, cancelClassName = null, inputClassName
               value={inputValue.value2}
               onChange={(event) => handleInputChange(index, "value2", event)}
               className={`inputCss2  ${inputClassName}`}
-              {...inputAttributes}
+              {...inputAttributesTwo}
             />
             <span
               onClick={() => handleDeleteOption(index)}
@@ -53,21 +53,20 @@ const DynamicDoubleInput = ({ length = 0, cancelClassName = null, inputClassName
           </div>
         ))}
       <button
-        onClick={handleAddInput}
+        onClick={handleClick}
         type="button"
-        className={`buttonCss2 ${buttonClassName}  ${length &&
-          inputOptions.length === length &&
-          (buttonError || "errorCss2")
+        className={`buttonCss2  ${buttonClassName}  ${length && inputOptions.length === length && (buttonErrorClassName || "errorCss2")
           } `}
         disabled={length && inputOptions.length === length ? true : false}
         {...buttonAttributes}
       >
-        {buttonIconBefore && (
-          <img src={buttonIconBefore} alt={cancelIcon} loading="lazy" />
+        {buttonIconBefore !== null && (
+          <img src={buttonIconBefore} alt={buttonIconBefore} loading="lazy" />
+
         )}
         {buttonText}
-        {buttonIconAfter && (
-          <img src={buttonIconAfter} alt={cancelIcon} loading="lazy" />
+        {buttonIconAfter !== null && (
+          <img src={buttonIconAfter} alt={buttonIconAfter} loading="lazy" />
         )}
       </button>
     </div>
